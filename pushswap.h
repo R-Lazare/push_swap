@@ -6,7 +6,7 @@
 /*   By: rluiz <rluiz@student.42lehavre.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 15:34:00 by rluiz             #+#    #+#             */
-/*   Updated: 2023/09/18 19:24:38 by rluiz            ###   ########.fr       */
+/*   Updated: 2023/09/19 17:42:09 by rluiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,6 @@ int		list_to_positive(t_piles *piles);
 int		check_for_duplicates(t_arena *arena, t_piles *piles);
 void	safe_exit_error(t_arena *arena);
 void	safe_exit_(t_arena *arena);
-int		is_full_digit(char *str);
+int		check_format(char *str);
 
 #endif

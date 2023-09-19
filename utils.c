@@ -6,7 +6,7 @@
 /*   By: rluiz <rluiz@student.42lehavre.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 15:33:13 by rluiz             #+#    #+#             */
-/*   Updated: 2023/09/18 19:32:11 by rluiz            ###   ########.fr       */
+/*   Updated: 2023/09/19 17:42:19 by rluiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,14 @@ t_piles	*parse_piles(t_arena *arena, char **str, int num_of_str)
 	piles->size_a = num_of_str;
 	piles->b = arena_alloc(arena, sizeof(int) * num_of_str);
 	piles->size_b = 0;
-	j = -1;
+	j = 0;
 	while (++j <= num_of_str)
 	{
-		if (ft_isdigit(str[j][0]) || (str[j][0] == '-' && ft_isdigit(str[j][1])))
-			piles->a[i++] = (int)ft_atoi(arena, str[j]);
-		if (ft_isalpha(str[j][0]))
+		if (!check_format(str[j]))
 			safe_exit_error(arena);
+		else if (ft_isdigit(str[j][0]) || (str[j][0] == '-'
+				&& ft_isdigit(str[j][1])))
+			piles->a[i++] = (int)ft_atoi(arena, str[j]);
 	}
 	return (piles);
 }
